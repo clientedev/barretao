@@ -107,12 +107,12 @@ export function calculateFreight(address, vehicleType, helpers, cargoSize = {}) 
 
   if (cargoSize.weight) {
     const weight = parseFloat(cargoSize.weight)
-    if (weight > 50) {
-      const weightCharge = (weight - 50) * 2
+    if (weight > 100) {
+      const weightCharge = (weight - 100) * 3 + 100
       price += weightCharge
       sizeAdjustment = true
-    } else if (weight > 100) {
-      const weightCharge = (weight - 100) * 3 + 100
+    } else if (weight > 50) {
+      const weightCharge = (weight - 50) * 2
       price += weightCharge
       sizeAdjustment = true
     }
