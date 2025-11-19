@@ -48,7 +48,7 @@ function Hero() {
         </div>
         <div className="hero-image slide-in-right">
           <div className="truck-animation">
-            <span className="truck">🚛</span>
+            <img src="/assets/hero-truck.jpg" alt="Caminhão Barreto Carretos" className="truck-img" />
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const whatsappMessage = `Olá! Meu nome é ${formData.name}.\n\nEmail: ${formData.email}\nTelefone: ${formData.phone}\n\nMensagem: ${formData.message}`
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
+    window.open(`https://wa.me/5511990230583?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
   }
 
   return (
@@ -43,7 +43,7 @@ function Contact() {
                 <span className="info-icon">📱</span>
                 <div>
                   <h4>Telefone / WhatsApp</h4>
-                  <a href="tel:+5511999999999">(11) 99999-9999</a>
+                  <a href="tel:+5511990230583">(11) 99023-0583</a>
                   <p>Atendimento 24 horas</p>
                 </div>
               </div>
@@ -125,7 +125,7 @@ function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  placeholder="(11) 99999-9999"
+                  placeholder="(11) 99023-0583"
                 />
               </div>
 

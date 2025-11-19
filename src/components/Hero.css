@@ -4,7 +4,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #1A1A2E 0%, #0F3460 100%);
+  background: 
+    linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%),
+    url('/assets/background.jpg') center/cover no-repeat;
   overflow: hidden;
   padding-top: 80px;
 }
@@ -128,9 +130,13 @@
   animation: float 3s ease-in-out infinite;
 }
 
-.truck {
-  font-size: 200px;
-  filter: drop-shadow(0 10px 30px rgba(255, 107, 0, 0.3));
+.truck-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3);
+  object-fit: cover;
 }
 
 @keyframes float {
@@ -191,8 +197,8 @@
     align-items: center;
   }
 
-  .truck {
-    font-size: 120px;
+  .truck-img {
+    max-width: 350px;
   }
 }
 

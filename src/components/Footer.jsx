@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <span className="logo-icon">🚚</span>
+              <img src="/assets/truck-logo.jpg" alt="Barreto Carretos" className="logo-icon" />
               <div>
                 <h3>Barreto Carretos</h3>
                 <p>Transportes & Logística</p>
@@ -55,7 +55,7 @@ function Footer() {
             <ul className="contact-list">
               <li>
                 <span>📱</span>
-                <a href="tel:+5511999999999">(11) 99999-9999</a>
+                <a href="tel:+5511990230583">(11) 99023-0583</a>
               </li>
               <li>
                 <span>✉️</span>

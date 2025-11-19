@@ -66,7 +66,7 @@ function About() {
             </div>
 
             <div className="truck-visual">
-              <span>🚛</span>
+              <img src="/assets/truck-1.jpg" alt="Frota Barreto Carretos" />
             </div>
           </div>
         </div>

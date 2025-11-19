@@ -125,7 +125,8 @@ Preço Final = Preço Base + (Distância × R$ 3,50/km) + (Ajudantes × R$ 50)
 - API ViaCEP pública e gratuita
 - Estimativa de coordenadas baseada em cidades conhecidas
 - Cálculo de distância usando fórmula de Haversine
-- Número WhatsApp placeholder (11) 99999-9999 - deve ser atualizado
+- Número WhatsApp configurado: (11) 99023-0583
+- Imagens profissionais de stock para visual premium
 
 ## Contato
 Para dúvidas sobre o código ou melhorias, consulte a documentação do React e Vite.

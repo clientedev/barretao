@@ -173,7 +173,7 @@ function FreightCalculator() {
                 className="btn-whatsapp"
                 onClick={() => {
                   const msg = `Olá! Gostaria de contratar um frete:\n\nDestino: ${address.logradouro}, ${address.bairro} - ${address.localidade}\nCEP: ${cep}\nVeículo: ${vehicles.find(v => v.id === vehicleType).name}\nAjudantes: ${helpers}\nValor: R$ ${result.price.toFixed(2)}`
-                  window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`, '_blank')
+                  window.open(`https://wa.me/5511990230583?text=${encodeURIComponent(msg)}`, '_blank')
                 }}
               >
                 📱 Solicitar via WhatsApp

@@ -25,7 +25,7 @@ function Header() {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
         <div className="logo">
-          <span className="logo-icon">🚚</span>
+          <img src="/assets/truck-logo.jpg" alt="Barreto Carretos Logo" className="logo-icon" />
           <div className="logo-text">
             <h1>Barreto Carretos</h1>
             <p>Transportes & Logística</p>

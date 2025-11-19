@@ -32,7 +32,10 @@
 }
 
 .footer-logo .logo-icon {
-  font-size: 48px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .footer-logo p {
