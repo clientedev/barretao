@@ -8,7 +8,7 @@
     linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%),
     url('/assets/background.jpg') center/cover no-repeat;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 160px;
 }
 
 .hero-overlay {
