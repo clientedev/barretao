@@ -68,7 +68,7 @@ function estimateCoordinates(address) {
   return { lat: -23.5505, lng: -46.6333 }
 }
 
-export function calculateFreight(address, vehicleType, helpers) {
+export function calculateFreight(address, vehicleType, helpers, cargoSize = {}) {
   const destCoords = estimateCoordinates(address)
   const distance = calculateDistance(
     BASE_COORDS.lat,
@@ -90,6 +90,34 @@ export function calculateFreight(address, vehicleType, helpers) {
   price += distance * 3.5
   price += helpers * 50
 
+  let volumeFactor = null
+  let sizeAdjustment = false
+
+  if (cargoSize.length && cargoSize.width && cargoSize.height) {
+    const volume = (cargoSize.length * cargoSize.width * cargoSize.height) / 1000000
+    volumeFactor = Math.round(volume * 100) / 100
+
+    const volumeCharge = volume * 80
+
+    if (volumeCharge > basePrice * 0.3) {
+      price += volumeCharge
+      sizeAdjustment = true
+    }
+  }
+
+  if (cargoSize.weight) {
+    const weight = parseFloat(cargoSize.weight)
+    if (weight > 50) {
+      const weightCharge = (weight - 50) * 2
+      price += weightCharge
+      sizeAdjustment = true
+    } else if (weight > 100) {
+      const weightCharge = (weight - 100) * 3 + 100
+      price += weightCharge
+      sizeAdjustment = true
+    }
+  }
+
   const isZonaLeste = address.bairro && (
     address.bairro.toLowerCase().includes('leste') ||
     address.localidade === 'São Paulo' && distance < 15
@@ -106,7 +134,9 @@ export function calculateFreight(address, vehicleType, helpers) {
     price: Math.round(price),
     distance: Math.round(distance * 10) / 10,
     estimatedTime: Math.round(distance / 25 * 60),
-    isZonaLeste
+    isZonaLeste,
+    volumeFactor,
+    sizeAdjustment
   }
 }
 

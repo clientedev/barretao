@@ -10,6 +10,12 @@ function FreightCalculator() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [result, setResult] = useState(null)
+  const [cargoSize, setCargoSize] = useState({
+    length: '',
+    width: '',
+    height: '',
+    weight: ''
+  })
 
   const handleCepChange = (e) => {
     const formatted = formatCEP(e.target.value)
@@ -42,8 +48,16 @@ function FreightCalculator() {
       return
     }
 
-    const calculation = calculateFreight(address, vehicleType, parseInt(helpers))
+    const calculation = calculateFreight(address, vehicleType, parseInt(helpers), cargoSize)
     setResult(calculation)
+  }
+
+  const handleCargoSizeChange = (field, value) => {
+    setCargoSize(prev => ({
+      ...prev,
+      [field]: value
+    }))
+    setResult(null)
   }
 
   const vehicles = [
@@ -126,6 +140,46 @@ function FreightCalculator() {
                 </select>
               </div>
 
+              <div className="form-group">
+                <label>
+                  <span className="icon">📏</span>
+                  Dimensões da Carga (opcional)
+                </label>
+                <div className="cargo-dimensions">
+                  <input
+                    type="number"
+                    placeholder="Comprimento (cm)"
+                    value={cargoSize.length}
+                    onChange={(e) => handleCargoSizeChange('length', e.target.value)}
+                    min="0"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Largura (cm)"
+                    value={cargoSize.width}
+                    onChange={(e) => handleCargoSizeChange('width', e.target.value)}
+                    min="0"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Altura (cm)"
+                    value={cargoSize.height}
+                    onChange={(e) => handleCargoSizeChange('height', e.target.value)}
+                    min="0"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Peso (kg)"
+                    value={cargoSize.weight}
+                    onChange={(e) => handleCargoSizeChange('weight', e.target.value)}
+                    min="0"
+                  />
+                </div>
+                <small className="form-hint">
+                  Informar as dimensões ajuda a calcular o preço com mais precisão
+                </small>
+              </div>
+
               <button type="submit" className="btn-calculate">
                 Calcular Frete
               </button>
@@ -154,9 +208,22 @@ function FreightCalculator() {
                   <span className="result-value">{result.estimatedTime} min</span>
                 </div>
 
+                {result.volumeFactor && (
+                  <div className="result-item">
+                    <span className="result-label">Volume da Carga</span>
+                    <span className="result-value">{result.volumeFactor} m³</span>
+                  </div>
+                )}
+
                 {result.isZonaLeste && (
                   <div className="discount-badge">
                     <span>✨ Desconto Zona Leste aplicado!</span>
+                  </div>
+                )}
+
+                {result.sizeAdjustment && (
+                  <div className="info-badge">
+                    <span>📦 Ajuste por tamanho da carga aplicado</span>
                   </div>
                 )}
               </div>

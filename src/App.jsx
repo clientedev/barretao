@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import FreightCalculator from './components/FreightCalculator'
 import Services from './components/Services'
+import Consulting from './components/Consulting'
 import About from './components/About'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <FreightCalculator />
       <Services />
+      <Consulting />
       <About />
       <Testimonials />
       <Contact />

@@ -25,7 +25,7 @@ function Header() {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
         <div className="logo">
-          <img src="/assets/truck-logo.jpg" alt="Barreto Carretos Logo" className="logo-icon" />
+          <img src="/logo.png" alt="Barreto Carretos Logo" className="logo-icon" />
           <div className="logo-text">
             <h1>Barreto Carretos</h1>
             <p>Transportes & Logística</p>
@@ -44,6 +44,7 @@ function Header() {
           <a onClick={() => scrollToSection('inicio')}>Início</a>
           <a onClick={() => scrollToSection('cotacao')}>Cotação</a>
           <a onClick={() => scrollToSection('servicos')}>Serviços</a>
+          <a onClick={() => scrollToSection('consultoria')}>Consultoria</a>
           <a onClick={() => scrollToSection('sobre')}>Sobre</a>
           <a onClick={() => scrollToSection('depoimentos')}>Depoimentos</a>
           <a onClick={() => scrollToSection('contato')} className="btn-contact">Contato</a>

@@ -66,6 +66,26 @@
   border-color: var(--primary-color);
 }
 
+.cargo-dimensions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cargo-dimensions input {
+  padding: 12px;
+  font-size: 14px;
+}
+
+.form-hint {
+  display: block;
+  color: #666;
+  font-size: 13px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
 .loading-text {
   display: block;
   margin-top: 8px;
@@ -205,13 +225,18 @@
   color: #fff;
 }
 
-.discount-badge {
+.discount-badge,
+.info-badge {
   background: rgba(255, 255, 255, 0.25);
   padding: 12px;
   border-radius: 10px;
   text-align: center;
   margin-top: 15px;
   font-weight: 600;
+}
+
+.info-badge {
+  background: rgba(74, 222, 128, 0.25);
 }
 
 .result-info {
