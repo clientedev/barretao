@@ -1,0 +1,150 @@
+.about {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text h2 {
+  font-size: 42px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.about-text .lead {
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.value-item {
+  display: flex;
+  gap: 15px;
+  align-items: start;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateX(5px);
+}
+
+.value-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.value-item h4 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.value-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.stats-card {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stats-card h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.truck-visual {
+  background: var(--gray-light);
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.truck-visual span {
+  font-size: 120px;
+  display: inline-block;
+  animation: drive 3s ease-in-out infinite;
+}
+
+@keyframes drive {
+  0%, 100% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+}
