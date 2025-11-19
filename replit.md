@@ -4,8 +4,9 @@
 Site moderno e completo para empresa de carretos e transportes com sede na Zona Leste de São Paulo. O site oferece um sistema inteligente de cotação de frete baseado em CEP, com cálculo automático de distância e preços justos e lucrativos.
 
 ## Status do Projeto
-- **Estado Atual**: Aplicação completa e funcional
+- **Estado Atual**: Aplicação completa e funcional com consultoria em logística
 - **Data de Criação**: 19 de novembro de 2025
+- **Última Atualização**: 19 de novembro de 2025
 - **Tecnologia**: React + Vite
 - **Origem**: Migração do GitHub (https://github.com/clientedev/barretao)
 
@@ -26,6 +27,7 @@ Site moderno e completo para empresa de carretos e transportes com sede na Zona 
 │   │   ├── Hero.jsx         # Seção principal/banner
 │   │   ├── FreightCalculator.jsx  # Calculadora de frete (principal)
 │   │   ├── Services.jsx     # Seção de serviços
+│   │   ├── Consulting.jsx   # Página de consultoria em logística
 │   │   ├── About.jsx        # Sobre a empresa
 │   │   ├── Testimonials.jsx # Depoimentos de clientes
 │   │   ├── Contact.jsx      # Formulário de contato
@@ -35,6 +37,8 @@ Site moderno e completo para empresa de carretos e transportes com sede na Zona 
 │   ├── App.jsx              # Componente raiz
 │   ├── main.jsx             # Entry point
 │   └── index.css            # Estilos globais
+├── public/
+│   └── logo.png             # Logo oficial da empresa
 ├── index.html               # HTML principal
 ├── vite.config.js           # Configuração do Vite
 └── package.json             # Dependências do projeto
@@ -47,6 +51,10 @@ Site moderno e completo para empresa de carretos e transportes com sede na Zona 
 - **Cálculo Automático**: Calcula distância e preço baseado na localização
 - **Tipos de Veículo**: 4 opções (pequeno, médio, grande, caminhão)
 - **Ajudantes**: Opção de adicionar 0-3 ajudantes (+R$ 50 cada)
+- **Dimensões da Carga**: Campos opcionais para comprimento, largura, altura e peso
+  - Volume afeta o preço quando significativo (R$ 80/m³)
+  - Peso acima de 50kg: +R$ 2/kg adicional
+  - Peso acima de 100kg: +R$ 3/kg adicional (acima de 100kg)
 - **Desconto Zona Leste**: 10% de desconto para região base da empresa
 - **Botão WhatsApp**: Envio direto da cotação via WhatsApp
 
@@ -60,6 +68,12 @@ Site moderno e completo para empresa de carretos e transportes com sede na Zona 
 - **Hero**: Banner principal com estatísticas e CTAs
 - **Calculadora**: Sistema de cotação de frete
 - **Serviços**: 6 tipos de serviços oferecidos
+- **Consultoria em Logística**: Página dedicada sobre armazenagem
+  - Gestão de estoques
+  - Armazenagem estratégica
+  - Cross-docking
+  - Layout e organização
+  - Soluções de armazenagem (temporária, longo prazo, picking/packing)
 - **Sobre**: História e valores da empresa
 - **Depoimentos**: 6 avaliações de clientes
 - **Contato**: Formulário e informações de contato
@@ -79,7 +93,16 @@ Site moderno e completo para empresa de carretos e transportes com sede na Zona 
 
 ### Fórmula de Cálculo
 ```
-Preço Final = Preço Base + (Distância × R$ 3,50/km) + (Ajudantes × R$ 50)
+Preço Base = Valor do veículo selecionado
++ (Distância × R$ 3,50/km)
++ (Ajudantes × R$ 50)
++ (Volume em m³ × R$ 80) [se significativo]
++ Cobrança por peso:
+  - Peso 50-100kg: (peso - 50) × R$ 2
+  - Peso > 100kg: (peso - 100) × R$ 3 + R$ 100
+
+Desconto: 10% se Zona Leste
+Preço Final = MAX(cálculo acima, preço base do veículo)
 ```
 
 ### Desconto Especial
