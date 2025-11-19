@@ -10,11 +10,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <img src="/assets/truck-logo.jpg" alt="Barreto Carretos" className="logo-icon" />
-              <div>
-                <h3>Barreto Carretos</h3>
-                <p>Transportes & Logística</p>
-              </div>
+              <img src="/logo.png" alt="Barreto Carretos" className="footer-logo-img" />
             </div>
             <p className="footer-description">
               Mais de 10 anos oferecendo soluções completas em transporte, 
